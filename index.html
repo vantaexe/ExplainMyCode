@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExplainMyCode — Understand code, one explanation at a time</title>
+  <meta name="description" content="Paste code, get a plain-English explanation — line by line. No sign-up, no API key.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>Explain<span>My</span>Code</h1>
+      <p>Understand code, one explanation at a time.</p>
+      <p class="tagline">Paste code &rarr; get a plain-English explanation. No sign-up. No API key. It all runs in your browser.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls">
+      <label>
+        Language
+        <select id="language">
+          <option value="auto">Auto-detect</option>
+          <option value="python">Python</option>
+          <option value="javascript">JavaScript</option>
+          <option value="java">Java</option>
+          <option value="cpp">C / C++</option>
+          <option value="html">HTML</option>
+        </select>
+      </label>
+
+      <label>
+        Explanation level
+        <select id="level">
+          <option value="simple">Simple — like I'm new to coding</option>
+          <option value="normal" selected>Normal</option>
+          <option value="detailed">Detailed</option>
+        </select>
+      </label>
+
+      <div class="samples">
+        <span>Try an example:</span>
+        <button type="button" data-sample="python">Python: even or odd</button>
+        <button type="button" data-sample="javascript">JavaScript: sum a list</button>
+        <button type="button" data-sample="loop">Python: loop</button>
+      </div>
+    </section>
+
+    <section class="editor">
+      <label for="code">Your code</label>
+      <textarea id="code" rows="14" spellcheck="false" placeholder="Paste your code here...
+
+Example:
+def is_even(n):
+    if n % 2 == 0:
+        return True
+    return False"></textarea>
+      <div class="actions">
+        <button id="explain" type="button" class="primary">Explain this code &rarr;</button>
+        <button id="clear" type="button">Clear</button>
+        <button id="copy" type="button" disabled>Copy explanation</button>
+      </div>
+    </section>
+
+    <section id="output" class="output hidden">
+      <div class="meta">
+        <span id="detected"></span>
+        <span id="stats"></span>
+      </div>
+
+      <h2>What this code does</h2>
+      <p id="summary"></p>
+
+      <div id="concepts"></div>
+
+      <h2>Line by line</h2>
+      <ol id="lines"></ol>
+
+      <p class="note">Tip: this explainer reads the structure of your code (functions, loops, conditions, variables). It is a great first step for learning — for very complex code, also try running it step by step in your head, or with a debugger.</p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>Made by Vanta · ExplainMyCode · Learning by building.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
